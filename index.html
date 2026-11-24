@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eric Wang | Economics and quantitative finance</title>
+<meta name="description" content="Eric Wang is an economics student who builds data-driven stock-forecasting models in Python.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f4f6;--surface:#fff;--ink:#16202e;--muted:#55627a;--line:#d3d9e2;--accent:#0b5d66;--accent-ink:#fff;--test:#c2410c;--grid:rgba(22,32,46,.05);color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1620;--surface:#17212e;--ink:#e8edf3;--muted:#a1adc0;--line:#2b3849;--accent:#5cc8d3;--accent-ink:#0f1620;--test:#fb923c;--grid:rgba(232,237,243,.05);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1620;--surface:#17212e;--ink:#e8edf3;--muted:#a1adc0;--line:#2b3849;--accent:#5cc8d3;--accent-ink:#0f1620;--test:#fb923c;--grid:rgba(232,237,243,.05);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+header.top{border-bottom:1px solid var(--line);background:var(--bg)}
+header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1.5rem;padding-top:1rem;padding-bottom:1rem}
+.brand{font:600 1.25rem "Newsreader",Georgia,serif;color:var(--ink);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem}
+nav a{color:var(--muted);text-decoration:none;padding:.25rem 0;border-bottom:2px solid transparent}
+nav a:hover{color:var(--ink)}
+nav a[aria-current="page"]{color:var(--ink);border-color:var(--accent)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:"Newsreader",Georgia,serif;font-weight:600;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,8vw,4.6rem)}
+h2{font-size:clamp(1.7rem,4vw,2.2rem);margin-top:2.5rem}
+h3{font-size:1.35rem;margin-top:1.5rem}
+p{margin:0 0 1rem;max-width:46rem}
+.lead{font-size:1.25rem;max-width:40rem;color:var(--ink)}
+main{padding:3rem 0 4rem}
+.view{display:none}
+.view.on{display:block}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.5rem 0 0}
+.btn{display:inline-block;font:500 1rem "IBM Plex Sans",sans-serif;padding:.7rem 1.25rem;border-radius:4px;text-decoration:none;border:1.5px solid var(--accent);cursor:pointer}
+.btn.pri{background:var(--accent);color:var(--accent-ink)}
+.btn.sec{background:transparent;color:var(--accent)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.5rem;margin:2rem 0}
+.card h2,.card h3{margin-top:0}
+.fig{overflow-x:auto;margin:1.25rem 0 .5rem}
+.fig svg{display:block;min-width:30rem;width:100%;height:auto}
+.cap{font-size:.95rem;color:var(--muted);max-width:42rem}
+ul{padding-left:1.25rem;margin:0 0 1rem;max-width:46rem}
+li{margin-bottom:.4rem}
+dl{display:grid;grid-template-columns:minmax(0,11rem) 1fr;gap:.5rem 1.5rem;margin:0 0 1rem}
+dt{font-weight:500}
+dd{margin:0}
+@media (max-width:40rem){dl{grid-template-columns:1fr;gap:0}dd{margin-bottom:.75rem}}
+.note{border-left:3px solid var(--test);padding:.25rem 0 .25rem 1rem;color:var(--muted);max-width:44rem}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.25rem}
+.grid2 .card{margin:0}
+footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-size:.95rem}
+.hide{display:none!important}
+@media print{body{background:#fff;color:#000}header.top,footer,.btns,.noprint{display:none!important}.view{display:none!important}#resume{display:block!important}.card{border:0;padding:0;margin:0 0 1rem}main{padding:0}}
+@media (prefers-reduced-motion:no-preference){.view.on{animation:in .25s ease-out}@keyframes in{from{opacity:.4}to{opacity:1}}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="#home">Eric Wang</a>
+<nav aria-label="Main"><a href="#home">Home</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#resume">Resume</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main><div class="wrap">
+
+<section id="home" class="view">
+<h1>Eric Wang</h1>
+<p class="lead">I’m an economics student at Saddleback College. I build data-driven models in Python to study how stock markets behave.</p>
+<div class="btns"><a class="btn pri" href="#projects">View projects</a><a class="btn sec" href="#resume">Read my resume</a></div>
+
+<div class="card">
+<h2>Featured project: a multi-factor stock prediction model</h2>
+<p>The model combines technical, fundamental, macro and sentiment signals to forecast a stock’s move over the next day and the next month, and it is tested only on data it has not seen.</p>
+<div class="fig">
+<svg viewBox="0 0 640 190" role="img" aria-labelledby="t1 d1" xmlns="http://www.w3.org/2000/svg">
+<title id="t1">Walk-forward testing diagram</title>
+<desc id="d1">Five rows. In each row a longer training bar is followed by a short test bar. Each row trains on more past data and tests on the period right after it.</desc>
+<g font-family="IBM Plex Sans, sans-serif" font-size="13">
+<rect x="70" y="14" width="150" height="22" rx="3" fill="var(--accent)"/><rect x="220" y="14" width="70" height="22" rx="3" fill="var(--test)"/>
+<rect x="70" y="50" width="220" height="22" rx="3" fill="var(--accent)"/><rect x="290" y="50" width="70" height="22" rx="3" fill="var(--test)"/>
+<rect x="70" y="86" width="290" height="22" rx="3" fill="var(--accent)"/><rect x="360" y="86" width="70" height="22" rx="3" fill="var(--test)"/>
+<rect x="70" y="122" width="360" height="22" rx="3" fill="var(--accent)"/><rect x="430" y="122" width="70" height="22" rx="3" fill="var(--test)"/>
+<rect x="70" y="158" width="430" height="22" rx="3" fill="var(--accent)"/><rect x="500" y="158" width="70" height="22" rx="3" fill="var(--test)"/>
+<text x="0" y="30" fill="var(--muted)">Round 1</text><text x="0" y="66" fill="var(--muted)">Round 2</text><text x="0" y="102" fill="var(--muted)">Round 3</text><text x="0" y="138" fill="var(--muted)">Round 4</text><text x="0" y="174" fill="var(--muted)">Round 5</text>
+<rect x="590" y="22" width="12" height="12" fill="var(--accent)"/><text x="606" y="33" fill="var(--ink)">Train</text>
+<rect x="590" y="46" width="12" height="12" fill="var(--test)"/><text x="606" y="57" fill="var(--ink)">Test</text>
+</g></svg></div>
+<p class="cap">Each round trains on the past and is tested on the period right after it, so the model is never graded on data it has already seen. This is a simplified picture of the idea.</p>
+<div class="btns"><a class="btn sec" href="#projects">Read the full write-up</a></div>
+</div>
+
+<div class="grid2">
+<div class="card"><h3>What I study</h3><p>Economics, with microeconomics as my favourite subject so far, alongside Calculus II and public speaking.</p></div>
+<div class="card"><h3>What I’m aiming for</h3><p>A career in business, banking or a related economics field, where I can combine data work with clear writing.</p></div>
+</div>
+</section>
+
+<section id="projects" class="view">
+<h1>Projects</h1>
+<p class="lead">Each project states the question, the method, and what it cannot tell you.</p>
+
+<div class="card">
+<h2>Multi-factor stock prediction model (version 3.1)</h2>
+<dl>
+<dt>Question</dt><dd>Can combining several kinds of signals forecast a stock’s direction better than any single indicator?</dd>
+<dt>Data</dt><dd>Prices, the VIX, the 10-year Treasury yield, the US dollar index, sector and peer funds, options data, news sentiment and company fundamentals, pulled with the yfinance library.</dd>
+<dt>Method</dt><dd>Two forecast horizons: the next trading day and the next 21 trading days. Three tree-based models (Random Forest, XGBoost, LightGBM) are stacked, validated with walk-forward splits, and their probabilities are calibrated. ARIMA and LSTM models add price forecasts.</dd>
+<dt>Output</dt><dd>A combined score that turns into a buy or sell signal only when the model’s confidence reaches 60 percent.</dd>
+<dt>Tools</dt><dd>Python, Google Colab, scikit-learn, XGBoost, LightGBM, ARIMA, LSTM</dd>
+</dl>
+<p class="note">This is a learning project, not investment advice. A backtest shows how a method would have performed in the past, not how it will perform in the future.</p>
+<div class="btns"><a class="btn pri js-github" href="#">View the code on GitHub</a></div>
+</div>
+
+<div class="card">
+<h2>Induction proofs for recursive sequences</h2>
+<p>Calculus II project. I used mathematical induction to prove properties of recursively defined sequences, then applied the Monotonic Sequence Theorem to show that they converge.</p>
+</div>
+
+<div class="card">
+<h2>Laplace transforms and improper integrals</h2>
+<p>Calculus II group project. I worked through six problems built on improper integrals, the idea behind Laplace transforms, and typed the full solutions with LaTeX.</p>
+</div>
+</section>
+
+<section id="about" class="view">
+<h1>About</h1>
+<p class="lead">I study economics at Saddleback College and I like turning messy data into a clear answer.</p>
+<p>My interest in economics started in high school, when my team won a business simulation competition. Making decisions and then seeing the numbers respond made economics feel like a real tool rather than a school subject.</p>
+<p>Today my favourite subject is microeconomics. It is also the one that challenges me most, which is why I keep going back to it. I write code to test economic ideas, and the stock prediction model is my largest project so far.</p>
+<p>I want to work in business, banking or a related economics field.</p>
+<h2>Outside class</h2>
+<p>I play piano, tennis, volleyball and basketball, and I love swimming.</p>
+</section>
+
+<section id="resume" class="view">
+<h1>Resume</h1>
+<div class="btns noprint"><button class="btn pri" type="button" id="print">Save as PDF or print</button></div>
+<div class="card">
+<h2>Eric Wang</h2>
+<p>Economics student, Saddleback College</p>
+<h3>Education</h3>
+<p>Saddleback College, economics major.</p>
+<h3>Projects</h3>
+<ul>
+<li>Multi-factor stock prediction model: technical, fundamental, macro and sentiment factors; stacked Random Forest, XGBoost and LightGBM models with walk-forward validation; ARIMA and LSTM forecasts.</li>
+<li>Induction proofs for recursive sequences using the Monotonic Sequence Theorem (Calculus II).</li>
+<li>Laplace transforms and improper integrals group project, typed in LaTeX (Calculus II).</li>
+</ul>
+<h3>Skills</h3>
+<p>Python, Google Colab, scikit-learn, XGBoost, LightGBM, ARIMA, LSTM, LaTeX, backtesting and written communication.</p>
+<h3>Coursework</h3>
+<p>Microeconomics, Calculus II, Critical Thinking, Introduction to Public Speaking (in progress).</p>
+<h3>Interests</h3>
+<p>Piano, tennis, volleyball, basketball and swimming.</p>
+</div>
+</section>
+
+<section id="contact" class="view">
+<h1>Contact</h1>
+<p class="lead">If you are hiring, teaching, or just curious about my work, I would be glad to hear from you.</p>
+<div class="btns">
+<a class="btn pri js-email" href="#">Email me</a>
+<a class="btn sec js-linkedin" href="#">LinkedIn</a>
+<a class="btn sec js-github" href="#">GitHub</a>
+</div>
+</section>
+
+</div></main>
+<footer><div class="wrap">© 2026 Eric Wang. Last updated November 2026.</div></footer>
+
+<script>
+// Edit these three lines, then re-publish. Empty values hide the matching button.
+var LINKS={email:"",linkedin:"",github:""};
+(function(){
+var views=["home","projects","about","resume","contact"];
+function show(){
+var h=(location.hash||"#home").slice(1);if(views.indexOf(h)<0)h="home";
+views.forEach(function(v){document.getElementById(v).classList.toggle("on",v===h)});
+document.querySelectorAll("nav a").forEach(function(a){if(a.getAttribute("href")==="#"+h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+document.title=(h==="home"?"Eric Wang":h.charAt(0).toUpperCase()+h.slice(1)+" | Eric Wang")+" | Economics and quantitative finance";
+window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",show);show();
+function wire(sel,url){document.querySelectorAll(sel).forEach(function(a){if(url){a.href=url;if(url.indexOf("mailto:")!==0){a.target="_blank";a.rel="noopener"}}else a.classList.add("hide")})}
+wire(".js-email",LINKS.email?"mailto:"+LINKS.email:"");wire(".js-linkedin",LINKS.linkedin);wire(".js-github",LINKS.github);
+document.getElementById("print").addEventListener("click",function(){window.print()});
+})();
+</script>
+</body>
+</html>
